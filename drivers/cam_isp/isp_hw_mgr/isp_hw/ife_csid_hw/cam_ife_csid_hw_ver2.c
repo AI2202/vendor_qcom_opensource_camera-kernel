@@ -1498,6 +1498,12 @@ void cam_ife_csid_ver2_print_format_measure_info(
 		CAM_SUBDEV_MESSAGE_APPLY_CSIPHY_AUX, (void *)&data_idx);
 }
 
+
+#if defined ASUS_AI2201_PROJECT || defined ASUS_AI2202_PROJECT
+extern uint8_t g_cam_csi_check;  //ASUS_BSP Bryant "Add for camera csi debug"
+#endif
+
+
 static int cam_ife_csid_ver2_ipp_bottom_half(
 	void                                      *handler_priv,
 	void                                      *evt_payload_priv)
